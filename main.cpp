@@ -1,27 +1,12 @@
 #include <iostream>
-#include <cstdio>
-#include <cstring>
 
 using namespace std;
-
-int promptAndCalculate();
-
-int main () {
-    cout << "Enter + to add, - to subtract, * to multiply, / to divide" << endl;
-
-    while (true) {
-        double result = promptAndCalculate();
-        cout << "=" << result << endl;
-    }   
-}
 
 int promptAndCalculate() {
     double operand1, operand2, result = 0;
     char op;
 
-    cin >> operand1;
-    cin >> op;
-    cin >> operand2;
+    cin >> operand1 >> op >> operand2;
 
     switch (op) {
         case '+':
@@ -42,4 +27,13 @@ int promptAndCalculate() {
     }
 
     return result;
+}
+
+int main () {
+    cout << "Enter expression to calculate, using either +, -, * or /:\n\n";
+
+    while (true) {
+        double result = promptAndCalculate();
+        cout << "=" << result << endl;
+    }   
 }
